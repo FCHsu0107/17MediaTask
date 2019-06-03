@@ -46,7 +46,7 @@ class HTTPClient {
     
     func request(
         _ request: HTTPRequest,
-        completion: @escaping (Result<Any, Error>) -> Void) {
+        completion: @escaping (Result<Data, Error>) -> Void) {
         URLSession.shared.dataTask(
             with: makeRequest(request), completionHandler: {(data, response, error) in
                 guard error == nil else {
@@ -65,7 +65,9 @@ class HTTPClient {
                 }
                 if statusCode == 200 {
                     print("--------------LinkInfo----------")
-                    print(httpResponse.allHeaderFields["Link"])
+                    print(httpResponse.allHeaderFields["Link"] as Any)
+                    print("-------------response-----------")
+                    print(response as Any)
                     
                     completion(Result.success(data))
                     
