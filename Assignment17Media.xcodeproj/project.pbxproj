@@ -14,6 +14,8 @@
 		B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2C22A51E760052290D /* Assignment17Media.xcdatamodeld */; };
 		B91BEA3022A51E770052290D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA2F22A51E770052290D /* Assets.xcassets */; };
 		B91BEA3322A51E770052290D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA3122A51E770052290D /* LaunchScreen.storyboard */; };
+		B91BEA3C22A5440A0052290D /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3B22A5440A0052290D /* UserObject.swift */; };
+		B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B91BEA2F22A51E770052290D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B91BEA3222A51E770052290D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B91BEA3422A51E770052290D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B91BEA3B22A5440A0052290D /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		B91BEA2422A51E760052290D /* Assignment17Media */ = {
 			isa = PBXGroup;
 			children = (
+				B91BEA3A22A543F20052290D /* Model */,
 				B91BEA2522A51E760052290D /* AppDelegate.swift */,
 				B91BEA2722A51E760052290D /* ViewController.swift */,
 				B91BEA2922A51E760052290D /* Main.storyboard */,
@@ -82,13 +87,21 @@
 			path = Assignment17Media;
 			sourceTree = "<group>";
 		};
+		B91BEA3A22A543F20052290D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */,
+				B91BEA3B22A5440A0052290D /* UserObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ED4B32734E51BD396D7FDF59 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				702357C7C226AD0EFECD8FF0 /* Pods-Assignment17Media.debug.xcconfig */,
 				9E41C4678869D756797A71DB /* Pods-Assignment17Media.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */,
 				B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */,
+				B91BEA3C22A5440A0052290D /* UserObject.swift in Sources */,
 				B91BEA2822A51E760052290D /* ViewController.swift in Sources */,
 				B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */,
 			);
