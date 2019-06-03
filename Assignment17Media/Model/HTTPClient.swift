@@ -59,12 +59,15 @@ class HTTPClient {
                 }
                 
                 let statusCode = httpResponse.statusCode
-                
+                guard let data = data else {
+                    completion(Result.failure(HTTPError.responseError))
+                    return
+                }
                 if statusCode == 200 {
                     print("--------------LinkInfo----------")
                     print(httpResponse.allHeaderFields["Link"])
                     
-                    completion(Result.success(data!))
+                    completion(Result.success(data))
                     
                 } else {
                     
