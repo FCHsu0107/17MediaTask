@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CBAE1ECBCCA6AA8AEB7256D /* Pods_Assignment17Media.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A4726B07D50BAAA60B3F78 /* Pods_Assignment17Media.framework */; };
 		B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2522A51E760052290D /* AppDelegate.swift */; };
 		B91BEA2822A51E760052290D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2722A51E760052290D /* ViewController.swift */; };
 		B91BEA2B22A51E760052290D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA2922A51E760052290D /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A4726B07D50BAAA60B3F78 /* Pods_Assignment17Media.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment17Media.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		702357C7C226AD0EFECD8FF0 /* Pods-Assignment17Media.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment17Media.debug.xcconfig"; path = "Target Support Files/Pods-Assignment17Media/Pods-Assignment17Media.debug.xcconfig"; sourceTree = "<group>"; };
+		9E41C4678869D756797A71DB /* Pods-Assignment17Media.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment17Media.release.xcconfig"; path = "Target Support Files/Pods-Assignment17Media/Pods-Assignment17Media.release.xcconfig"; sourceTree = "<group>"; };
 		B91BEA2222A51E760052290D /* Assignment17Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment17Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91BEA2522A51E760052290D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B91BEA2722A51E760052290D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBAE1ECBCCA6AA8AEB7256D /* Pods_Assignment17Media.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447B5BE528E9385141916417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01A4726B07D50BAAA60B3F78 /* Pods_Assignment17Media.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B91BEA1922A51E760052290D = {
 			isa = PBXGroup;
 			children = (
 				B91BEA2422A51E760052290D /* Assignment17Media */,
 				B91BEA2322A51E760052290D /* Products */,
+				ED4B32734E51BD396D7FDF59 /* Pods */,
+				447B5BE528E9385141916417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = Assignment17Media;
 			sourceTree = "<group>";
 		};
+		ED4B32734E51BD396D7FDF59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				702357C7C226AD0EFECD8FF0 /* Pods-Assignment17Media.debug.xcconfig */,
+				9E41C4678869D756797A71DB /* Pods-Assignment17Media.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B91BEA3722A51E770052290D /* Build configuration list for PBXNativeTarget "Assignment17Media" */;
 			buildPhases = (
+				624C10564BB15E93E85F51DA /* [CP] Check Pods Manifest.lock */,
 				B91BEA1E22A51E760052290D /* Sources */,
 				B91BEA1F22A51E760052290D /* Frameworks */,
 				B91BEA2022A51E760052290D /* Resources */,
+				3DB5CFC6EF388CD5ADCC60A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DB5CFC6EF388CD5ADCC60A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assignment17Media/Pods-Assignment17Media-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assignment17Media/Pods-Assignment17Media-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		624C10564BB15E93E85F51DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assignment17Media-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B91BEA1E22A51E760052290D /* Sources */ = {
@@ -284,6 +358,7 @@
 		};
 		B91BEA3822A51E770052290D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 702357C7C226AD0EFECD8FF0 /* Pods-Assignment17Media.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +378,7 @@
 		};
 		B91BEA3922A51E770052290D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E41C4678869D756797A71DB /* Pods-Assignment17Media.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
