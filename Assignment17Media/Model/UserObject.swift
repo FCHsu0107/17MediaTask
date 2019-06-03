@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserObject {
+struct UserObject: Codable {
     var totalCount: Int
     var incompleteResults: Bool
     var items: [ItemInfo]
@@ -20,7 +20,7 @@ struct UserObject {
     }
 }
 
-struct ItemInfo {
+struct ItemInfo: Codable {
     var login: String
     var url: String
     var avatarUrl: String

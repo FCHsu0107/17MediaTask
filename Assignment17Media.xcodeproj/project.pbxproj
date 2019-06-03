@@ -16,6 +16,7 @@
 		B91BEA3322A51E770052290D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA3122A51E770052290D /* LaunchScreen.storyboard */; };
 		B91BEA3C22A5440A0052290D /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3B22A5440A0052290D /* UserObject.swift */; };
 		B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */; };
+		B91BEA4022A547340052290D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3F22A547340052290D /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B91BEA3422A51E770052290D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B91BEA3B22A5440A0052290D /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherWrapper.swift; sourceTree = "<group>"; };
+		B91BEA3F22A547340052290D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				B91BEA3D22A5444D0052290D /* KingFisherWrapper.swift */,
 				B91BEA3B22A5440A0052290D /* UserObject.swift */,
+				B91BEA3F22A547340052290D /* HTTPClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */,
 				B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */,
+				B91BEA4022A547340052290D /* HTTPClient.swift in Sources */,
 				B91BEA3C22A5440A0052290D /* UserObject.swift in Sources */,
 				B91BEA2822A51E760052290D /* ViewController.swift in Sources */,
 				B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */,
