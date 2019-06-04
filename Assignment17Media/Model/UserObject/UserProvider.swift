@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias UserSearchResultsHanlder = (Result<SearchResults, Error>) -> Void
+typealias UserSearchResultsHanlder = (Result<ResultsWithPageInfo, Error>) -> Void
 
 class UserProvider {
     
@@ -25,10 +25,22 @@ class UserProvider {
                     do {
                         let users = try strongSelf.decoder.decode(SearchResults.self, from: reponse.data)
                         
-                        DispatchQueue.main.async {
-                            completion(Result.success(users))
+                        let pagingManager = PagePathManager()
+                        
+                        if let headerLink = reponse.link {
+                            
+                            let paging: Int? = pagingManager.getNextPage(linkHeader: headerLink)
+                            
+                            DispatchQueue.main.async {
+                                completion(Result.success(ResultsWithPageInfo(paging: paging, results: users)))
+                            }
+                            
+                        } else {
+                            DispatchQueue.main.async {
+                                completion(Result.success(ResultsWithPageInfo(paging: nil, results: users)))
+                            }
                         }
-                                             
+                     
                     } catch {
                         completion(Result.failure(error))
                     }
