@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var searchBarTextField: UITextField!
     
+    
+    @IBOutlet weak var remindLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -51,16 +54,25 @@ class ViewController: UIViewController {
     private func searchUsers(text: String, paging: Int) {
         isFetching = true
         provider.fetchSreachResults(keyworkd: text, paging: paging) { [weak self] (result) in
+            guard let strongSelf = self else {
+                return
+            }
             switch result {
             case .success(let data):
-                self?.userInfoItems += data.results.items
-                
-                guard let paging = data.paging else { return }
-                self?.nextPage = paging
-                self?.isFetching = false
-                
-                print("---------paging----------")
-                print("fetch new paging \(paging)")
+                if data.results.totalCount != 0 {
+                    strongSelf.remindLabel.isHidden = true
+                    strongSelf.userInfoItems += data.results.items
+                    
+                    guard let paging = data.paging else { return }
+                    strongSelf.nextPage = paging
+                    strongSelf.isFetching = false
+                    
+                    print("---------paging----------")
+                    print("fetch new paging \(paging)")
+                } else {
+                    strongSelf.remindLabel.isHidden = false
+                    strongSelf.remindLabel.text = "No result of \(text)"
+                }
                 
             case .failure(let error):
                 print(error)

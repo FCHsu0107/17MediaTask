@@ -22,41 +22,46 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKt-Hu-GyU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSp-Rx-je3">
-                                                <rect key="frame" x="20" y="5" width="319" height="30"/>
+                                                <rect key="frame" x="20" y="5" width="305" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17L-JD-Rfs">
-                                                <rect key="frame" x="344" y="5" width="50" height="30"/>
+                                                <rect key="frame" x="333" y="8" width="61" height="34"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="17L-JD-Rfs" secondAttribute="height" multiplier="5:3" id="eKI-VS-i6A"/>
+                                                    <constraint firstAttribute="width" secondItem="17L-JD-Rfs" secondAttribute="height" multiplier="61:34" id="MXC-Kb-Obg"/>
                                                 </constraints>
                                                 <state key="normal" title="Sreach">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clickSreachBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pK1-Dt-QLD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="17L-JD-Rfs" secondAttribute="bottom" constant="5" id="4ZQ-z3-i9I"/>
-                                            <constraint firstItem="17L-JD-Rfs" firstAttribute="leading" secondItem="KSp-Rx-je3" secondAttribute="trailing" constant="5" id="5wQ-D8-SNh"/>
+                                            <constraint firstAttribute="bottom" secondItem="17L-JD-Rfs" secondAttribute="bottom" constant="8" id="4ZQ-z3-i9I"/>
+                                            <constraint firstItem="17L-JD-Rfs" firstAttribute="leading" secondItem="KSp-Rx-je3" secondAttribute="trailing" constant="8" id="5wQ-D8-SNh"/>
                                             <constraint firstAttribute="trailing" secondItem="17L-JD-Rfs" secondAttribute="trailing" constant="20" id="O5L-0c-Ydf"/>
-                                            <constraint firstItem="17L-JD-Rfs" firstAttribute="top" secondItem="XKt-Hu-GyU" secondAttribute="top" constant="5" id="mCt-r7-Jh2"/>
+                                            <constraint firstItem="17L-JD-Rfs" firstAttribute="top" secondItem="XKt-Hu-GyU" secondAttribute="top" constant="8" id="mCt-r7-Jh2"/>
                                             <constraint firstItem="KSp-Rx-je3" firstAttribute="leading" secondItem="XKt-Hu-GyU" secondAttribute="leading" constant="20" id="o0u-AU-5jd"/>
                                             <constraint firstItem="KSp-Rx-je3" firstAttribute="top" secondItem="XKt-Hu-GyU" secondAttribute="top" constant="5" id="rXl-1W-IF0"/>
-                                            <constraint firstAttribute="height" constant="40" id="tzh-pV-ZW1"/>
+                                            <constraint firstAttribute="height" constant="50" id="tzh-pV-ZW1"/>
                                             <constraint firstAttribute="bottom" secondItem="KSp-Rx-je3" secondAttribute="bottom" constant="5" id="wdt-er-Zlw"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1zF-MV-CZw">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="778"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="768"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XKK-AL-cnz">
                                             <size key="itemSize" width="50" height="50"/>
@@ -82,9 +87,18 @@
                                     <constraint firstItem="1zF-MV-CZw" firstAttribute="top" secondItem="XKt-Hu-GyU" secondAttribute="bottom" id="zHe-Ui-AMU"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the keyword to search users in GitHud" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ6-4o-aIL">
+                                <rect key="frame" x="20" y="427.5" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tQ6-4o-aIL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6zM-mr-nHc"/>
+                            <constraint firstItem="tQ6-4o-aIL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AYZ-Ai-BA7"/>
+                            <constraint firstItem="tQ6-4o-aIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IMR-qM-ZgH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QTD-aU-XOS" secondAttribute="bottom" id="JK0-4Y-Vs0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QTD-aU-XOS" secondAttribute="trailing" id="L7J-8H-YDP"/>
                             <constraint firstItem="QTD-aU-XOS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UuQ-1A-1G0"/>
@@ -94,6 +108,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="1zF-MV-CZw" id="RBx-9h-JUx"/>
+                        <outlet property="remindLabel" destination="tQ6-4o-aIL" id="ALZ-UM-gus"/>
                         <outlet property="searchBarTextField" destination="KSp-Rx-je3" id="lOg-uh-8T2"/>
                     </connections>
                 </viewController>
