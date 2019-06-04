@@ -38,6 +38,9 @@
                                                 <state key="normal" title="Sreach">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickSreachBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pK1-Dt-QLD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="1zF-MV-CZw" id="RBx-9h-JUx"/>
+                        <outlet property="searchBarTextField" destination="KSp-Rx-je3" id="lOg-uh-8T2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

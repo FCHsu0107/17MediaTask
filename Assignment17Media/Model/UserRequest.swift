@@ -33,7 +33,7 @@ enum UserInfoRequest: HTTPRequest {
     var endPoint: String {
         switch self {
         case .sreachFeature(let keyword, let paging):
-            return "search/users?q=\(keyword)&page=\(paging)"
+            return "/search/users?q=\(keyword)&page=\(paging)"
        
         }
     }

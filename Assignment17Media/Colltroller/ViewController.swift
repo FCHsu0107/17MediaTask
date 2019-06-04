@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchBarTextField: UITextField!
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -17,11 +19,34 @@ class ViewController: UIViewController {
         }
     }
     
-    var userInfoItems: [UserInfoObject] = [UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4"), UserInfoObject(login: "wujunchuan", url: "https://api.github.com/users/wujunchuan", avatarUrl: "https://avatars1.githubusercontent.com/u/7511631?v=4")]
+    var userInfoItems: [UserInfoObject] = [] {
+        didSet {
+            reloadData()
+        }
+    }
+    
+    let provider = UserProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+    }
+    
+    
+    @IBAction func clickSreachBtn(_ sender: Any) {
+        if searchBarTextField.text?.isEmpty == false {
+            guard let text = searchBarTextField.text else { return }
+            
+            provider.fetchSreachResults(keyworkd: text, paging: 1) { [weak self] (result) in
+                switch result {
+                case .success(let data):
+                    self?.userInfoItems = data.items
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
     
     private func setUpCollectionView() {
@@ -46,6 +71,17 @@ class ViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = 0
         
         collectionView.collectionViewLayout = flowLayout
+    }
+    
+    private func reloadData() {
+        guard Thread.isMainThread == true else {
+            DispatchQueue.main.async { [weak self] in
+                self?.reloadData()
+            }
+            return
+        }
+        
+        collectionView.reloadData()
     }
     
 }
