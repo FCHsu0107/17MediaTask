@@ -69,8 +69,9 @@ class HTTPClient {
                     return
                 }
                 if statusCode == 200 {
-                    completion(Result.success(
-                        GitHubReponse(data: data, link: httpResponse.allHeaderFields["Link"] as? String)))
+                    let link = httpResponse.allHeaderFields["Link"] as? String
+                    
+                    completion(Result.success(GitHubReponse(data: data, link: link)))
                     
 //                    print("--------------LinkInfo----------")
 //                    print(httpResponse.allHeaderFields["Link"] as Any)

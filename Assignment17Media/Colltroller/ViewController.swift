@@ -25,10 +25,15 @@ class ViewController: UIViewController {
         }
     }
     
+    var searchParameter: SearchParameter?
+    
     let provider = UserProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboradWhenTappedAround()
+        
         setUpCollectionView()
     }
     
@@ -36,15 +41,23 @@ class ViewController: UIViewController {
     @IBAction func clickSreachBtn(_ sender: Any) {
         if searchBarTextField.text?.isEmpty == false {
             guard let text = searchBarTextField.text else { return }
-            
-            provider.fetchSreachResults(keyworkd: text, paging: 1) { [weak self] (result) in
-                switch result {
-                case .success(let data):
-                    self?.userInfoItems = data.items
-                    
-                case .failure(let error):
-                    print(error)
-                }
+            searchParameter?.keyword = text
+            searchUsers(text: text)
+        }
+    }
+    
+    private func searchUsers(text: String) {
+        provider.fetchSreachResults(keyworkd: text, paging: 1) { [weak self] (result) in
+            switch result {
+            case .success(let data):
+                self?.userInfoItems = data.results.items
+                print("-----paging------")
+                guard let paging = data.paging else { return }
+                self?.searchParameter?.paging = paging
+                print(self?.searchParameter?.paging)
+                
+            case .failure(let error):
+                print(error)
             }
         }
     }
