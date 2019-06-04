@@ -25,7 +25,9 @@ class ViewController: UIViewController {
         }
     }
     
-    var searchParameter: SearchParameter?
+    var isFetching: Bool = false
+    
+    var nextPage: Int? = 1
     
     let provider = UserProvider()
     
@@ -41,20 +43,24 @@ class ViewController: UIViewController {
     @IBAction func clickSreachBtn(_ sender: Any) {
         if searchBarTextField.text?.isEmpty == false {
             guard let text = searchBarTextField.text else { return }
-            searchParameter?.keyword = text
-            searchUsers(text: text)
+            userInfoItems = []
+            searchUsers(text: text, paging: 1)
         }
     }
     
-    private func searchUsers(text: String) {
-        provider.fetchSreachResults(keyworkd: text, paging: 1) { [weak self] (result) in
+    private func searchUsers(text: String, paging: Int) {
+        isFetching = true
+        provider.fetchSreachResults(keyworkd: text, paging: paging) { [weak self] (result) in
             switch result {
             case .success(let data):
-                self?.userInfoItems = data.results.items
-                print("-----paging------")
+                self?.userInfoItems += data.results.items
+                
                 guard let paging = data.paging else { return }
-                self?.searchParameter?.paging = paging
-                print(self?.searchParameter?.paging)
+                self?.nextPage = paging
+                self?.isFetching = false
+                
+                print("---------paging----------")
+                print("fetch new paging \(paging)")
                 
             case .failure(let error):
                 print(error)
@@ -97,6 +103,14 @@ class ViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView.contentSize.height - collectionView.contentOffset.y < 1650,
+            nextPage != nil,
+            isFetching == false {
+            guard let text = searchBarTextField.text, let paging = nextPage else { return }
+            self.searchUsers(text: text, paging: paging)
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -116,6 +130,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return searchCell
     }
-    
     
 }
