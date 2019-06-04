@@ -52,12 +52,31 @@
                                             <constraint firstAttribute="bottom" secondItem="KSp-Rx-je3" secondAttribute="bottom" constant="5" id="wdt-er-Zlw"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1zF-MV-CZw">
+                                        <rect key="frame" x="0.0" y="40" width="414" height="778"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XKK-AL-cnz">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="E5T-Lz-jCj"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="jCg-bU-mp9"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="XKt-Hu-GyU" firstAttribute="top" secondItem="QTD-aU-XOS" secondAttribute="top" id="aFR-oB-uHk"/>
+                                    <constraint firstItem="1zF-MV-CZw" firstAttribute="leading" secondItem="QTD-aU-XOS" secondAttribute="leading" id="ak0-hH-gY8"/>
+                                    <constraint firstAttribute="trailing" secondItem="1zF-MV-CZw" secondAttribute="trailing" id="jLp-Pn-VDB"/>
                                     <constraint firstAttribute="trailing" secondItem="XKt-Hu-GyU" secondAttribute="trailing" id="kHI-jC-ard"/>
+                                    <constraint firstAttribute="bottom" secondItem="1zF-MV-CZw" secondAttribute="bottom" id="uvY-c6-AXF"/>
                                     <constraint firstItem="XKt-Hu-GyU" firstAttribute="leading" secondItem="QTD-aU-XOS" secondAttribute="leading" id="yI6-9k-l0Q"/>
+                                    <constraint firstItem="1zF-MV-CZw" firstAttribute="top" secondItem="XKt-Hu-GyU" secondAttribute="bottom" id="zHe-Ui-AMU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,6 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="1zF-MV-CZw" id="RBx-9h-JUx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

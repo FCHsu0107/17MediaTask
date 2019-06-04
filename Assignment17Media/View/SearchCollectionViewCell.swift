@@ -1,5 +1,5 @@
 //
-//  SreachCollectionViewCell.swift
+//  SearchCollectionViewCell.swift
 //  Assignment17Media
 //
 //  Created by Fu-Chiung HSU on 2019/6/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SreachCollectionViewCell: UICollectionViewCell {
+class SearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var avatrImage: UIImageView!
     
