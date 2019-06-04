@@ -35,8 +35,11 @@ class PagePathManager {
     }
     
     private func getPageInfo(linkHeader: String) -> [String: String] {
+        
         let links = linkHeader.components(separatedBy: ",")
+        
         var dictionary: [String: String] = [:]
+        
         links.forEach({
             let components = $0.components(separatedBy: ";")
             let cleanPath = components[0].trimmingCharacters(in: CharacterSet(charactersIn: "<>"))

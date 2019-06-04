@@ -24,6 +24,8 @@
 		B91BEA4E22A617640052290D /* CollectionView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA4D22A617640052290D /* CollectionView_Extension.swift */; };
 		B9B0A86122A66CE000904E48 /* PagePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86022A66CE000904E48 /* PagePathManager.swift */; };
 		B9B0A86622A6A23B00904E48 /* UIViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86522A6A23B00904E48 /* UIViewController_Extension.swift */; };
+		B9B0A86C22A6B9C900904E48 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86A22A6B9C900904E48 /* FooterCollectionViewCell.swift */; };
+		B9B0A86D22A6B9C900904E48 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B0A86B22A6B9C900904E48 /* FooterCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		B91BEA4D22A617640052290D /* CollectionView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView_Extension.swift; sourceTree = "<group>"; };
 		B9B0A86022A66CE000904E48 /* PagePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePathManager.swift; sourceTree = "<group>"; };
 		B9B0A86522A6A23B00904E48 /* UIViewController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Extension.swift; sourceTree = "<group>"; };
+		B9B0A86A22A6B9C900904E48 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
+		B9B0A86B22A6B9C900904E48 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +97,9 @@
 			children = (
 				B91BEA4722A6038C0052290D /* Third party framework */,
 				B91BEA4C22A6174A0052290D /* Extension */,
+				B91BEA3A22A543F20052290D /* Model */,
 				B91BEA4622A603690052290D /* Colltroller */,
 				B91BEA4522A603510052290D /* View */,
-				B91BEA3A22A543F20052290D /* Model */,
 				B91BEA2522A51E760052290D /* AppDelegate.swift */,
 				B91BEA2F22A51E770052290D /* Assets.xcassets */,
 				B91BEA3422A51E770052290D /* Info.plist */,
@@ -117,10 +121,9 @@
 		B91BEA4522A603510052290D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B9B0A86722A6B99700904E48 /* CollectionViewCell */,
 				B91BEA3122A51E770052290D /* LaunchScreen.storyboard */,
 				B91BEA2922A51E760052290D /* Main.storyboard */,
-				B91BEA4822A603F70052290D /* SearchCollectionViewCell.swift */,
-				B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +177,17 @@
 				B91BEA4322A5E38A0052290D /* UserProvider.swift */,
 			);
 			path = UserObject;
+			sourceTree = "<group>";
+		};
+		B9B0A86722A6B99700904E48 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B91BEA4822A603F70052290D /* SearchCollectionViewCell.swift */,
+				B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */,
+				B9B0A86A22A6B9C900904E48 /* FooterCollectionViewCell.swift */,
+				B9B0A86B22A6B9C900904E48 /* FooterCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		ED4B32734E51BD396D7FDF59 /* Pods */ = {
@@ -247,6 +261,7 @@
 			files = (
 				B91BEA3322A51E770052290D /* LaunchScreen.storyboard in Resources */,
 				B91BEA3022A51E770052290D /* Assets.xcassets in Resources */,
+				B9B0A86D22A6B9C900904E48 /* FooterCollectionViewCell.xib in Resources */,
 				B91BEA4B22A603F70052290D /* SearchCollectionViewCell.xib in Resources */,
 				B91BEA2B22A51E760052290D /* Main.storyboard in Resources */,
 			);
@@ -306,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B0A86C22A6B9C900904E48 /* FooterCollectionViewCell.swift in Sources */,
 				B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */,
 				B91BEA4A22A603F70052290D /* SearchCollectionViewCell.swift in Sources */,
 				B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */,

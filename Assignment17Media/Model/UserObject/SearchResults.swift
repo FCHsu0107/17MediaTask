@@ -50,11 +50,3 @@ struct ResultsWithPageInfo {
     
     var results: SearchResults
 }
-
-struct SearchParameter {
-    
-    var keyword: String
-    
-    var paging: Int?
-    
-}

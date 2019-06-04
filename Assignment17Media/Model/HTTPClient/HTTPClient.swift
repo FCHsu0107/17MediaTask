@@ -9,7 +9,9 @@
 import Foundation
 
 struct GitHubReponse {
+    
     var data: Data
+    
     var link: String?
 }
 
@@ -72,16 +74,6 @@ class HTTPClient {
                     let link = httpResponse.allHeaderFields["Link"] as? String
                     
                     completion(Result.success(GitHubReponse(data: data, link: link)))
-                    
-//                    print("--------------LinkInfo----------")
-//                    print(httpResponse.allHeaderFields["Link"] as Any)
-//                    guard let link = httpResponse.allHeaderFields["Link"] as? String else { return }
-//                    print(link)
-//                    
-//                    let pageManager = PagePathManager()
-//                    let nextLink = pageManager.getNextPage(linkHeader: link)
-//                    print("-------nextLink---------")
-//                    print(nextLink as Any)
                     
                 } else {
                     

@@ -9,29 +9,37 @@
 import Foundation
 
 enum UserInfoRequest: HTTPRequest {
+    
     case sreachFeature(keyword: String, paging: Int)
     
     var headers: [String : String] {
         switch self {
+            
         case .sreachFeature: return [:]
+            
         }
     }
     
     var body: [String : Any]? {
         switch self {
+            
         case .sreachFeature: return nil
+            
         }
     }
     
     var method: String {
         switch self {
+            
         case .sreachFeature:
             return HTTPMethod.GET.rawValue
+            
         }
     }
     
     var endPoint: String {
         switch self {
+            
         case .sreachFeature(let keyword, let paging):
             return "/search/users?q=\(keyword)&page=\(paging)"
        
