@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct UserObject: Codable {
+struct SearchResults: Codable {
     var totalCount: Int
     var incompleteResults: Bool
-    var items: [ItemInfo]
+    var items: [UserInfoObject]
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -20,7 +20,7 @@ struct UserObject: Codable {
     }
 }
 
-struct ItemInfo: Codable {
+struct UserInfoObject: Codable {
     var login: String
     var url: String
     var avatarUrl: String

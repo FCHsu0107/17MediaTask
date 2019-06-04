@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias UserSearchResultsHanlder = (Result<UserObject, Error>) -> Void
+typealias UserSearchResultsHanlder = (Result<SearchResults, Error>) -> Void
 
 class UserProvider {
     
@@ -23,7 +23,7 @@ class UserProvider {
                 switch result {
                 case .success(let data):
                     do {
-                        let users = try strongSelf.decoder.decode(UserObject.self, from: data)
+                        let users = try strongSelf.decoder.decode(SearchResults.self, from: data)
                         
                         DispatchQueue.main.async {
                             completion(Result.success(users))
