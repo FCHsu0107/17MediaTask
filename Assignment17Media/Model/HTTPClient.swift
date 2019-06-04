@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct GitHubReponse {
+    var data: Data
+    var link: String?
+}
+
 enum HTTPError: Error {
     
     case decodeFailed
@@ -46,7 +51,7 @@ class HTTPClient {
     
     func request(
         _ request: HTTPRequest,
-        completion: @escaping (Result<Data, Error>) -> Void) {
+        completion: @escaping (Result<GitHubReponse, Error>) -> Void) {
         URLSession.shared.dataTask(
             with: makeRequest(request), completionHandler: {(data, response, error) in
                 guard error == nil else {
@@ -64,12 +69,18 @@ class HTTPClient {
                     return
                 }
                 if statusCode == 200 {
+                    completion(Result.success(
+                        GitHubReponse(data: data, link: httpResponse.allHeaderFields["Link"] as? String)))
+                    
                     print("--------------LinkInfo----------")
                     print(httpResponse.allHeaderFields["Link"] as Any)
-                    print("-------------response-----------")
-                    print(response as Any)
+                    guard let link = httpResponse.allHeaderFields["Link"] as? String else { return }
+                    print(link)
                     
-                    completion(Result.success(data))
+                    let pageManager = PagePathManager()
+                    let nextLink = pageManager.getNextPage(linkHeader: link)
+                    print("-------nextLink---------")
+                    print(nextLink as Any)
                     
                 } else {
                     

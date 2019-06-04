@@ -21,9 +21,9 @@ class UserProvider {
                 guard let strongSelf = self else { return }
                 
                 switch result {
-                case .success(let data):
+                case .success(let reponse):
                     do {
-                        let users = try strongSelf.decoder.decode(SearchResults.self, from: data)
+                        let users = try strongSelf.decoder.decode(SearchResults.self, from: reponse.data)
                         
                         DispatchQueue.main.async {
                             completion(Result.success(users))

@@ -22,6 +22,7 @@
 		B91BEA4A22A603F70052290D /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA4822A603F70052290D /* SearchCollectionViewCell.swift */; };
 		B91BEA4B22A603F70052290D /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */; };
 		B91BEA4E22A617640052290D /* CollectionView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA4D22A617640052290D /* CollectionView_Extension.swift */; };
+		B9B0A86122A66CE000904E48 /* PagePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86022A66CE000904E48 /* PagePathManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B91BEA4822A603F70052290D /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		B91BEA4D22A617640052290D /* CollectionView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView_Extension.swift; sourceTree = "<group>"; };
+		B9B0A86022A66CE000904E48 /* PagePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePathManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				B91BEA3F22A547340052290D /* HTTPClient.swift */,
 				B91BEA4122A5E17F0052290D /* UserRequest.swift */,
 				B91BEA4322A5E38A0052290D /* UserProvider.swift */,
+				B9B0A86022A66CE000904E48 /* PagePathManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */,
 				B91BEA4022A547340052290D /* HTTPClient.swift in Sources */,
 				B91BEA3C22A5440A0052290D /* SearchResults.swift in Sources */,
+				B9B0A86122A66CE000904E48 /* PagePathManager.swift in Sources */,
 				B91BEA2822A51E760052290D /* ViewController.swift in Sources */,
 				B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */,
 				B91BEA4222A5E17F0052290D /* UserRequest.swift in Sources */,
