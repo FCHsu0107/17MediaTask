@@ -11,7 +11,6 @@
 		B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2522A51E760052290D /* AppDelegate.swift */; };
 		B91BEA2822A51E760052290D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2722A51E760052290D /* ViewController.swift */; };
 		B91BEA2B22A51E760052290D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA2922A51E760052290D /* Main.storyboard */; };
-		B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA2C22A51E760052290D /* Assignment17Media.xcdatamodeld */; };
 		B91BEA3022A51E770052290D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA2F22A51E770052290D /* Assets.xcassets */; };
 		B91BEA3322A51E770052290D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA3122A51E770052290D /* LaunchScreen.storyboard */; };
 		B91BEA3C22A5440A0052290D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA3B22A5440A0052290D /* SearchResults.swift */; };
@@ -36,7 +35,6 @@
 		B91BEA2522A51E760052290D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B91BEA2722A51E760052290D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B91BEA2A22A51E760052290D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B91BEA2D22A51E760052290D /* Assignment17Media.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment17Media.xcdatamodel; sourceTree = "<group>"; };
 		B91BEA2F22A51E770052290D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B91BEA3222A51E770052290D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B91BEA3422A51E770052290D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				B91BEA2522A51E760052290D /* AppDelegate.swift */,
 				B91BEA2F22A51E770052290D /* Assets.xcassets */,
 				B91BEA3422A51E770052290D /* Info.plist */,
-				B91BEA2C22A51E760052290D /* Assignment17Media.xcdatamodeld */,
 			);
 			path = Assignment17Media;
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 				B9B0A86C22A6B9C900904E48 /* FooterCollectionViewCell.swift in Sources */,
 				B91BEA3E22A5444D0052290D /* KingFisherWrapper.swift in Sources */,
 				B91BEA4A22A603F70052290D /* SearchCollectionViewCell.swift in Sources */,
-				B91BEA2E22A51E760052290D /* Assignment17Media.xcdatamodeld in Sources */,
 				B91BEA4022A547340052290D /* HTTPClient.swift in Sources */,
 				B91BEA3C22A5440A0052290D /* SearchResults.swift in Sources */,
 				B9B0A86122A66CE000904E48 /* PagePathManager.swift in Sources */,
@@ -537,19 +533,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B91BEA2C22A51E760052290D /* Assignment17Media.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B91BEA2D22A51E760052290D /* Assignment17Media.xcdatamodel */,
-			);
-			currentVersion = B91BEA2D22A51E760052290D /* Assignment17Media.xcdatamodel */;
-			path = Assignment17Media.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B91BEA1A22A51E760052290D /* Project object */;
 }

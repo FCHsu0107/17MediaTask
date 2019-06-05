@@ -19,8 +19,12 @@ class FooterCollectionViewCell: UICollectionViewCell {
     func showEnd(paging: Int?) {
         if paging == nil {
             footerLabel.text = "End"
-        } else {
+            
+        } else if paging == 1 {
             footerLabel.text = ""
+            
+        } else {
+            footerLabel.text = "Loading..."
         }
     }
 

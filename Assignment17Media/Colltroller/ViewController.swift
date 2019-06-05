@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     
     var nextPage: Int? = 1
     
+    var avtivityIndicaotr: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     let provider = UserProvider()
     
     override func viewDidLoad() {
@@ -46,6 +48,8 @@ class ViewController: UIViewController {
         userInfoItems = []
         nextPage = 1
         if searchBarTextField.text?.isEmpty == false {
+            loadingView()
+            remindLabel.isHidden = true
             guard let text = searchBarTextField.text else { return }
             searchUsers(text: text, paging: 1)
         } else {
@@ -58,9 +62,12 @@ class ViewController: UIViewController {
         isFetching = true
         
         provider.fetchSreachResults(keyworkd: text, paging: paging) { [weak self] (result) in
+            self?.stopedLoadingView()
+            
             guard let strongSelf = self else {
                 return
             }
+            
             switch result {
             case .success(let data):
                 if data.results.totalCount != 0 {
@@ -77,11 +84,13 @@ class ViewController: UIViewController {
                     print("fetch new paging \(paging)")
                     
                 } else {
+                    
                     strongSelf.remindLabel.isHidden = false
                     strongSelf.remindLabel.text = "No result for \(text)"
                 }
                 
             case .failure(let error):
+                // 處理錯誤？
                 print(error)
             }
         }
@@ -100,6 +109,7 @@ class ViewController: UIViewController {
         setUpCollectionViewLayout()
     }
     
+    //MARK: -Collection View layout
     private func setUpCollectionViewLayout() {
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -134,6 +144,24 @@ class ViewController: UIViewController {
             self.searchUsers(text: text, paging: paging)
         }
     }
+    
+    private func loadingView() {
+        avtivityIndicaotr.center = self.view.center
+        avtivityIndicaotr.hidesWhenStopped = true
+        avtivityIndicaotr.style = .gray
+        self.view.addSubview(avtivityIndicaotr)
+        avtivityIndicaotr.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    private func stopedLoadingView() {
+        DispatchQueue.main.async { [weak self] in 
+            self?.avtivityIndicaotr.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {

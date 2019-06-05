@@ -42,7 +42,7 @@ enum UserInfoRequest: HTTPRequest {
             
         case .sreachFeature(let keyword, let paging):
             return "/search/users?q=\(keyword)&page=\(paging)"
-       
+            
         }
     }
 }

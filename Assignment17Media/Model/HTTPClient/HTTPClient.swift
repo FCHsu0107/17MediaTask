@@ -22,6 +22,12 @@ enum HTTPError: Error {
     case requestFailed
     
     case responseError
+    
+    case clientError(Data)
+    
+    case serverError
+    
+    case unexpectedError
 }
 
 enum HTTPMethod: String {
@@ -66,20 +72,33 @@ class HTTPClient {
                 }
                 
                 let statusCode = httpResponse.statusCode
+                
                 guard let data = data else {
                     completion(Result.failure(HTTPError.responseError))
                     return
                 }
-                if statusCode == 200 {
+                
+                switch statusCode {
+                    
+                case 200..<300:
+                    
                     let link = httpResponse.allHeaderFields["Link"] as? String
                     
                     completion(Result.success(GitHubReponse(data: data, link: link)))
                     
-                } else {
+                case 400..<500:
                     
-                    completion(Result.failure(HTTPError.responseError))
+                    completion(Result.failure(HTTPError.clientError(data)))
                     
+                case 500..<600:
+                    
+                    completion(Result.failure(HTTPError.serverError))
+                    
+                default: return
+
+                    completion(Result.failure(HTTPError.unexpectedError))
                 }
+                
         }).resume()
     }
     
