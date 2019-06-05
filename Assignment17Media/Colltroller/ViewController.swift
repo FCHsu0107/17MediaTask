@@ -14,12 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var remindLabel: UILabel!
     
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.delegate = self
-            collectionView.dataSource = self
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var userInfoItems: [UserInfoObject] = [] {
         didSet {
@@ -31,7 +26,7 @@ class ViewController: UIViewController {
     
     var nextPage: Int? = 1
     
-    var avtivityIndicaotr: UIActivityIndicatorView = UIActivityIndicatorView()
+    var avtivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     let provider = UserProvider()
     
@@ -62,7 +57,7 @@ class ViewController: UIViewController {
         isFetching = true
         
         provider.fetchSreachResults(keyworkd: text, paging: paging) { [weak self] (result) in
-            self?.stopedLoadingView()
+            self?.stoppedLoadingView()
             
             guard let strongSelf = self else {
                 return
@@ -91,12 +86,17 @@ class ViewController: UIViewController {
                 
             case .failure(let error):
                 // 處理錯誤？
+                JQProgressHUD.showFailure(text: "Server is busy, please try again later.")
                 print(error)
+                
             }
         }
     }
     
     private func setUpCollectionView() {
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         collectionView.jq_registerCellWithNib(
             identifier: String(describing: SearchCollectionViewCell.self),
@@ -107,22 +107,6 @@ class ViewController: UIViewController {
             bundle: nil)
         
         setUpCollectionViewLayout()
-    }
-    
-    //MARK: -Collection View layout
-    private func setUpCollectionViewLayout() {
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        
-        flowLayout.itemSize = CGSize(width: Int(UIScreen.main.bounds.width), height: 110)
-        
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        flowLayout.minimumLineSpacing = 0
-        
-        flowLayout.minimumInteritemSpacing = 0
-        
-        collectionView.collectionViewLayout = flowLayout
     }
     
     private func reloadData() {
@@ -145,25 +129,42 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: - Avtivity Indicator
     private func loadingView() {
-        avtivityIndicaotr.center = self.view.center
-        avtivityIndicaotr.hidesWhenStopped = true
-        avtivityIndicaotr.style = .gray
-        self.view.addSubview(avtivityIndicaotr)
-        avtivityIndicaotr.startAnimating()
+        avtivityIndicator.center = self.view.center
+        avtivityIndicator.hidesWhenStopped = true
+        avtivityIndicator.style = .gray
+        self.view.addSubview(avtivityIndicator)
+        avtivityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
-        
     }
     
-    private func stopedLoadingView() {
+    private func stoppedLoadingView() {
         DispatchQueue.main.async { [weak self] in 
-            self?.avtivityIndicaotr.stopAnimating()
+            self?.avtivityIndicator.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()
         }
     }
     
+    //MARK: - Collection View layout
+    private func setUpCollectionViewLayout() {
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        
+        flowLayout.itemSize = CGSize(width: Int(UIScreen.main.bounds.width), height: 110)
+        
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        flowLayout.minimumLineSpacing = 0
+        
+        flowLayout.minimumInteritemSpacing = 0
+        
+        collectionView.collectionViewLayout = flowLayout
+    }
+    
 }
 
+//MARK: - Collection View
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -196,8 +197,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         case 1:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: String(describing: FooterCollectionViewCell.self), for: indexPath)
+            
             guard let footerCell = cell as? FooterCollectionViewCell else { return cell }
+            
             footerCell.showEnd(paging: nextPage)
+            
             return footerCell
             
         default:

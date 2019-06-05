@@ -6,6 +6,7 @@ target 'Assignment17Media' do
   use_frameworks!
 
   pod 'Kingfisher', '~> 5.0'
+  pod 'JGProgressHUD'
 
   # Pods for Assignment17Media
   
