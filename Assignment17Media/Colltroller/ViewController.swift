@@ -87,7 +87,6 @@ class ViewController: UIViewController {
                     
                     strongSelf.nextPage = paging
                     strongSelf.isFetching = false
-                    
                     print("fetch new paging \(paging)")
                     
                 } else {
@@ -100,14 +99,15 @@ class ViewController: UIViewController {
                 // 處理錯誤
                 JQProgressHUD.showFailure(text: error.localizedDescription)
                 print(error)
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 60, execute: {
                     print("等了60秒了")
+                    // 60秒後重打api
                     guard let text = self?.searchBarTextField.text, let paging = self?.nextPage else { return }
                     if paging != 1 {
                         self?.searchUsers(text: text, paging: paging)
                     }
                 })
-  
             }
         }
     }
@@ -222,6 +222,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 extension ViewController: UITextFieldDelegate {
+    // tap return to search user
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchBarTextField.resignFirstResponder()
         searchAction()
