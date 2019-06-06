@@ -69,7 +69,7 @@ class JQProgressHUD {
         
         shared.hub.show(in: shared.view, animated: true)
         
-        shared.hub.dismiss(afterDelay: 5)
+        shared.hub.dismiss(afterDelay: 2)
     }
     
 }

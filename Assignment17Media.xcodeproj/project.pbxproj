@@ -22,6 +22,7 @@
 		B91BEA4B22A603F70052290D /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */; };
 		B91BEA4E22A617640052290D /* CollectionView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91BEA4D22A617640052290D /* CollectionView_Extension.swift */; };
 		B93E9FD822A79C8500BE4632 /* JGProgressHUDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E9FD722A79C8500BE4632 /* JGProgressHUDWrapper.swift */; };
+		B93E9FDA22A8A46500BE4632 /* AvtivityIndicator_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E9FD922A8A46500BE4632 /* AvtivityIndicator_Extension.swift */; };
 		B9B0A86122A66CE000904E48 /* PagePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86022A66CE000904E48 /* PagePathManager.swift */; };
 		B9B0A86622A6A23B00904E48 /* UIViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86522A6A23B00904E48 /* UIViewController_Extension.swift */; };
 		B9B0A86C22A6B9C900904E48 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0A86A22A6B9C900904E48 /* FooterCollectionViewCell.swift */; };
@@ -48,6 +49,7 @@
 		B91BEA4922A603F70052290D /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		B91BEA4D22A617640052290D /* CollectionView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView_Extension.swift; sourceTree = "<group>"; };
 		B93E9FD722A79C8500BE4632 /* JGProgressHUDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDWrapper.swift; sourceTree = "<group>"; };
+		B93E9FD922A8A46500BE4632 /* AvtivityIndicator_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvtivityIndicator_Extension.swift; sourceTree = "<group>"; };
 		B9B0A86022A66CE000904E48 /* PagePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePathManager.swift; sourceTree = "<group>"; };
 		B9B0A86522A6A23B00904E48 /* UIViewController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Extension.swift; sourceTree = "<group>"; };
 		B9B0A86A22A6B9C900904E48 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				B91BEA4D22A617640052290D /* CollectionView_Extension.swift */,
 				B9B0A86522A6A23B00904E48 /* UIViewController_Extension.swift */,
+				B93E9FD922A8A46500BE4632 /* AvtivityIndicator_Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				B91BEA2822A51E760052290D /* ViewController.swift in Sources */,
 				B91BEA2622A51E760052290D /* AppDelegate.swift in Sources */,
 				B91BEA4222A5E17F0052290D /* UserRequest.swift in Sources */,
+				B93E9FDA22A8A46500BE4632 /* AvtivityIndicator_Extension.swift in Sources */,
 				B91BEA4E22A617640052290D /* CollectionView_Extension.swift in Sources */,
 				B93E9FD822A79C8500BE4632 /* JGProgressHUDWrapper.swift in Sources */,
 				B91BEA4422A5E38A0052290D /* UserProvider.swift in Sources */,

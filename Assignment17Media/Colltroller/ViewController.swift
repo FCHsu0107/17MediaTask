@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var searchBarTextField: UITextField!
+    @IBOutlet weak var searchBarTextField: UITextField! {
+        didSet {
+            searchBarTextField.delegate = self
+        }
+    }
     
     @IBOutlet weak var remindLabel: UILabel!
     
@@ -22,8 +26,10 @@ class ViewController: UIViewController {
         }
     }
     
+    //判斷是否打api
     var isFetching: Bool = false
     
+    //起始頁面
     var nextPage: Int? = 1
     
     var avtivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -38,12 +44,16 @@ class ViewController: UIViewController {
         setUpCollectionView()
     }
     
-    
     @IBAction func clickSreachBtn(_ sender: Any) {
+        searchAction()
+    }
+    
+    // Action of search user
+    private func searchAction() {
         userInfoItems = []
         nextPage = 1
         if searchBarTextField.text?.isEmpty == false {
-            loadingView()
+            avtivityIndicator.loadingView(vc: self)
             remindLabel.isHidden = true
             guard let text = searchBarTextField.text else { return }
             searchUsers(text: text, paging: 1)
@@ -51,8 +61,10 @@ class ViewController: UIViewController {
             remindLabel.isHidden = false
             remindLabel.text = "Please enter the keyword to search users"
         }
+
     }
     
+    // connect GitHub api
     private func searchUsers(text: String, paging: Int) {
         isFetching = true
         
@@ -85,10 +97,17 @@ class ViewController: UIViewController {
                 }
                 
             case .failure(let error):
-                // 處理錯誤？
-                JQProgressHUD.showFailure(text: "Server is busy, please try again later.")
+                // 處理錯誤
+                JQProgressHUD.showFailure(text: error.localizedDescription)
                 print(error)
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 60, execute: {
+                    print("等了60秒了")
+                    guard let text = self?.searchBarTextField.text, let paging = self?.nextPage else { return }
+                    if paging != 1 {
+                        self?.searchUsers(text: text, paging: paging)
+                    }
+                })
+  
             }
         }
     }
@@ -130,15 +149,6 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Avtivity Indicator
-    private func loadingView() {
-        avtivityIndicator.center = self.view.center
-        avtivityIndicator.hidesWhenStopped = true
-        avtivityIndicator.style = .gray
-        self.view.addSubview(avtivityIndicator)
-        avtivityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-    }
-    
     private func stoppedLoadingView() {
         DispatchQueue.main.async { [weak self] in 
             self?.avtivityIndicator.stopAnimating()
@@ -208,5 +218,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchBarTextField.resignFirstResponder()
+        searchAction()
+        return true
     }
 }
