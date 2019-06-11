@@ -100,7 +100,7 @@
 				B91BEA4722A6038C0052290D /* Third party framework */,
 				B91BEA4C22A6174A0052290D /* Extension */,
 				B91BEA3A22A543F20052290D /* Model */,
-				B91BEA4622A603690052290D /* Colltroller */,
+				B91BEA4622A603690052290D /* Controller */,
 				B91BEA4522A603510052290D /* View */,
 				B91BEA2522A51E760052290D /* AppDelegate.swift */,
 				B91BEA2F22A51E770052290D /* Assets.xcassets */,
@@ -129,12 +129,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B91BEA4622A603690052290D /* Colltroller */ = {
+		B91BEA4622A603690052290D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B91BEA2722A51E760052290D /* ViewController.swift */,
 			);
-			path = Colltroller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B91BEA4722A6038C0052290D /* Third party framework */ = {

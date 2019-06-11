@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         setUpCollectionView()
     }
     
-    @IBAction func clickSreachBtn(_ sender: Any) {
+    @IBAction func clickSearchBtn(_ sender: Any) {
         searchAction()
     }
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     private func searchUsers(text: String, paging: Int) {
         isFetching = true
         
-        provider.fetchSreachResults(keyworkd: text, paging: paging) { [weak self] (result) in
+        provider.fetchSearchResults(keyworkd: text, paging: paging) { [weak self] (result) in
             self?.stoppedLoadingView()
             
             guard let strongSelf = self else {

@@ -10,12 +10,12 @@ import Foundation
 
 enum UserInfoRequest: HTTPRequest {
     
-    case sreachFeature(keyword: String, paging: Int)
+    case searchFeature(keyword: String, paging: Int)
     
     var headers: [String : String] {
         switch self {
             
-        case .sreachFeature: return [:]
+        case .searchFeature: return [:]
             
         }
     }
@@ -23,7 +23,7 @@ enum UserInfoRequest: HTTPRequest {
     var body: [String : Any]? {
         switch self {
             
-        case .sreachFeature: return nil
+        case .searchFeature: return nil
             
         }
     }
@@ -31,7 +31,7 @@ enum UserInfoRequest: HTTPRequest {
     var method: String {
         switch self {
             
-        case .sreachFeature:
+        case .searchFeature:
             return HTTPMethod.GET.rawValue
             
         }
@@ -40,7 +40,7 @@ enum UserInfoRequest: HTTPRequest {
     var endPoint: String {
         switch self {
             
-        case .sreachFeature(let keyword, let paging):
+        case .searchFeature(let keyword, let paging):
             return "/search/users?q=\(keyword)&page=\(paging)"
             
         }

@@ -36,7 +36,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="17L-JD-Rfs" secondAttribute="height" multiplier="61:34" id="MXC-Kb-Obg"/>
                                                 </constraints>
-                                                <state key="normal" title="Sreach">
+                                                <state key="normal" title="Search">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -45,7 +45,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="clickSreachBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pK1-Dt-QLD"/>
+                                                    <action selector="clickSearchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pK1-Dt-QLD"/>
                                                 </connections>
                                             </button>
                                         </subviews>

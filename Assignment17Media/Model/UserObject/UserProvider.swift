@@ -14,9 +14,9 @@ class UserProvider {
     
     let decoder = JSONDecoder()
     
-    func fetchSreachResults(keyworkd: String, paging: Int, completion: @escaping UserSearchResultsHanlder) {
+    func fetchSearchResults(keyworkd: String, paging: Int, completion: @escaping UserSearchResultsHanlder) {
         HTTPClient.shared.request(
-            UserInfoRequest.sreachFeature(keyword: keyworkd, paging: paging),
+            UserInfoRequest.searchFeature(keyword: keyworkd, paging: paging),
             completion: {[weak self] result in
                 guard let strongSelf = self else { return }
                 
